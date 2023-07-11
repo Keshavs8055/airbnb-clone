@@ -1,6 +1,7 @@
 "use client";
 import React, { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
+import Button from "../Button";
 
 interface ModelProps {
   isOpen?: boolean;
@@ -12,7 +13,7 @@ interface ModelProps {
   actionLabel: string;
   disabled?: boolean;
   secondaryAction?: () => void;
-  secondaryLabel: string;
+  secondaryLabel?: string;
 }
 
 const Models: React.FC<ModelProps> = ({ actionLabel, onclose, onsubmit, secondaryLabel, body, disabled, footer, isOpen, secondaryAction, title }) => {
@@ -55,6 +56,14 @@ const Models: React.FC<ModelProps> = ({ actionLabel, onclose, onsubmit, secondar
                 <button onClick={handleClose} className="p-1 border-0 hover:opacity-0 transition absolute left-9">
                   <IoMdClose />
                 </button>
+                <div className="text-lg font-semibold">{title}</div>
+              </div>
+              <div className="relative p-6 flex-auto">{body}</div>
+              <div className="flex flex-col gap-2 p-6">
+                <div className="flex flex-row items-center gap-4 w-full">
+                  {secondaryAction && secondaryLabel ? <Button outline disabled={disabled} label={secondaryLabel} onClick={handleSecondaryAction} /> : null}
+                  <Button disabled={disabled} label={actionLabel} onClick={handleSubmit} />
+                </div>
               </div>
             </div>
           </div>

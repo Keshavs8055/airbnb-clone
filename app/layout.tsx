@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={font.className}>
         <ClientOnly>
           <Navbar />
-          <Models isOpen />
+          <Models actionLabel="Submit" secondaryLabel="Close" isOpen title="Hello" />
         </ClientOnly>
         {children}
       </body>
