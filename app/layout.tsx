@@ -1,5 +1,6 @@
 import ClientOnly from "./components/ClientOnly";
 import Models from "./components/Models/Models";
+import RegisterModel from "./components/Models/RegisterModel";
 import Navbar from "./components/Navbar/Navbar";
 import "./globals.css";
 import { Nunito } from "next/font/google";
@@ -17,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={font.className}>
         <ClientOnly>
           <Navbar />
-          <Models actionLabel="Submit" secondaryLabel="Close" isOpen title="Hello" />
+          <RegisterModel />
         </ClientOnly>
         {children}
       </body>
