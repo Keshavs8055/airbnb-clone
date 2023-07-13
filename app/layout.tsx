@@ -1,3 +1,4 @@
+import ToasterProvider from "./Providers/toaster.provider";
 import ClientOnly from "./components/ClientOnly";
 import Models from "./components/Models/Models";
 import RegisterModel from "./components/Models/RegisterModel";
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <ToasterProvider />
           <Navbar />
           <RegisterModel />
         </ClientOnly>

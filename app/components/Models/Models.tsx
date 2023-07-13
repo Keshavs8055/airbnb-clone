@@ -77,6 +77,7 @@ const Models: React.FC<ModelProps> = ({ actionLabel, onclose, onsubmit, secondar
                     onClick={handleSubmit}
                   />
                 </div>
+                {footer}
               </div>
             </div>
           </div>

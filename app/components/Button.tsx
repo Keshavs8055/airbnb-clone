@@ -23,8 +23,14 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, disabled, icon: Icon, o
         ${small ? "font-light" : "font-semibold"}
         ${small ? "border-[1px]" : "border-2"}
   `}
-      disabled={disabled}>
-      {Icon && <Icon size={24} className="absolute top-3 left-3" />}
+      disabled={disabled}
+      onClick={onClick}>
+      {Icon && (
+        <Icon
+          size={24}
+          className="absolute top-3 left-3"
+        />
+      )}
       {label}
     </button>
   );
